@@ -45,4 +45,4 @@ testem.log
 Thumbs.db
 
 # Private files
-/src/environments/environment.ts
+/src/environments/
