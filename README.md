@@ -1,27 +1,50 @@
-# Goals
+# GitHub Searcher
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.6.
+#### Description, 02/2019
 
-## Development server
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.6. It is an online website that allows a person to search for users at gitHub using their usernames. It also allows one to search for a specific repository on gitHub.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+#### By **Hussein Fuaad Mahmoud**
 
-## Code scaffolding
+## BDD
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+| Behavior- Our program should handle: | Input Example- When it receives: | Output Example- It should return: |
+| :-------------: | :-------------: | :-------------: |
+| Search for user | Input "fuaad001" | Display user: "fuaad001" |
+| Search for user repository | Input "fuaad001/pig-dice" | Display user repository: "fuaad001/pig-dice" |
 
-## Build
+## Setup/Installation Requirements
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+* Open your browser browser.
+* Load gitHub on your browser.
+* Search for fuaad001/.... repository.
+* Fork the data onto your own personal repository.
+* Clone project
+* run `'ng install'` on terminal
+* run `'ng serve'` on terminal
+* To access the live website, click on this url https://fuaad001.github.io/quotes
 
-## Running unit tests
+## Known Bugs
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+No Bugs
 
-## Running end-to-end tests
+## Technologies Used
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+* CSS for styling.
+* HTML for webpage design.
+* Typescript for back-end.
 
-## Further help
+## Dependencies
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Angular CLI
+
+## Support and contact details
+
+* Contact me using:
+* Telephone: +(254) 751-579-367
+* Email: husseinfuaad@hotmail.com
+
+### License and Copyright details
+
+* The MIT License (MIT)
+* Copyright (c) 2019**Hussein Fuaad Mahmoud**
