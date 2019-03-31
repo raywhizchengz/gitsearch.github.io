@@ -15,58 +15,58 @@ export class UserService {
     this.user = new User("","","","","","","", "", new Date());
   }
 
-  // updateUser(userName: string){
-  //     this.userName = userName; 
-  //   }
+  updateUser(userName: string){
+      this.userName = userName; 
+    }
   
 
-  //   userRequest(){
+    userRequest(){
 
-  //     interface ApiResponse{
-  //       login: string;
-  //       name: string;
-  //       bio: any;
-  //       public_repos: number;
-  //       followers: number;
-  //       following: number;
-  //       avatar_url: any;
-  //       html_url: any;
-  //     }
-  //     let promise = new Promise((resolve,reject)=>{
-  //       this.http.get<ApiResponse>(environment.apiUrl + this.userName + "?access_tpken=" + environment.access_token).toPromise().then(response=>{
+      interface ApiResponse{
+        login: string;
+        name: string;
+        bio: any;
+        public_repos: number;
+        followers: number;
+        following: number;
+        avatar_url: any;
+        html_url: any;
+      }
+      let promise = new Promise((resolve,reject)=>{
+        this.http.get<ApiResponse>(environment.apiUrl + this.userName + "?access_tpken=" + environment.access_token).toPromise().then(response=>{
 
-  //         this.user.avatar = response.avatar_url
-  //         this.user.username = response.login
-  //         this.user.name = response.name
-  //         this.user.bio = response.bio
-  //         this.user.repositories = response.public_repos
-  //         this.user.followers = response.followers
-  //         this.user.following = response.following
-  //         this.user.link = response.html_url
+          this.user.avatar = response.avatar_url
+          this.user.username = response.login
+          this.user.name = response.name
+          this.user.bio = response.bio
+          this.user.repositories = response.public_repos
+          this.user.followers = response.followers
+          this.user.following = response.following
+          this.user.link = response.html_url
           
 
-  //       resolve();
+        resolve();
 
-  //     },
-  //     error=>{
+      },
+      error=>{
 
-  //         this.user.avatar = ""
-  //         this.user.username = "fuaad001"
-  //         this.user.name = "Hussein Fuaad"
-  //         this.user.bio = "Coding is mbaemby!"
-  //         this.user.repositories = 22
-  //         this.user.followers = 2
-  //         this.user.following = 0
+          this.user.avatar = ""
+          this.user.username = "fuaad001"
+          this.user.name = "Hussein Fuaad"
+          this.user.bio = "Coding is mbaemby!"
+          this.user.repositories = 22
+          this.user.followers = 2
+          this.user.following = 0
 
-  //       reject(error);
+        reject(error);
 
 
-  //       })
-  //     })
+        })
+      })
 
-  //     return promise
+      return promise
 
-  //   }
+    }
 
     
 
