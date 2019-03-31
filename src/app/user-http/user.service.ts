@@ -1,24 +1,24 @@
-import { Component } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { environment } from '../environments/environment';
-import { User } from './user-class/user';
-import { UserService } from './user-http/user.service';
-import { Router } from '@angular/router';
+import { environment } from '../../environments/environment';
+import { User } from '../user-class/user';
 
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  providers: [UserService],
-  styleUrls: ['./app.component.css']
+@Injectable({
+  providedIn: 'root'
 })
-export class AppComponent {
+export class UserService {
 
-  // user: User;
+  user: User;
+  userName="";
 
-  // constructor( userRequestService: UserService, private http:HttpClient, private router: Router){
-  //   this.user = new User("","","","","","","", "");
-  // }
-  // userName="";
+  constructor(private http:HttpClient){
+    this.user = new User("","","","","","","", "", new Date());
+  }
+
+  // updateUser(userName: string){
+  //     this.userName = userName; 
+  //   }
+  
 
   //   userRequest(){
 
@@ -33,7 +33,7 @@ export class AppComponent {
   //       html_url: any;
   //     }
   //     let promise = new Promise((resolve,reject)=>{
-  //       this.http.get<ApiResponse>(environment.apiUrl + this.userName + "?access_token=" + environment.access_token).toPromise().then(response=>{
+  //       this.http.get<ApiResponse>(environment.apiUrl + this.userName + "?access_tpken=" + environment.access_token).toPromise().then(response=>{
 
   //         this.user.avatar = response.avatar_url
   //         this.user.username = response.login
@@ -50,14 +50,13 @@ export class AppComponent {
   //     },
   //     error=>{
 
-  //         this.user.avatar = "https://avatars1.githubusercontent.com/u/47349274?v=4"
+  //         this.user.avatar = ""
   //         this.user.username = "fuaad001"
   //         this.user.name = "Hussein Fuaad"
-  //         this.user.bio = "Full-Stack Developer \r\nAndroid Developer\r\nCertified Chef\r\nRelationship Officer"
+  //         this.user.bio = "Coding is mbaemby!"
   //         this.user.repositories = 22
   //         this.user.followers = 2
   //         this.user.following = 0
-  //         this.user.link = "https://github.com/fuaad001"
 
   //       reject(error);
 
@@ -68,5 +67,7 @@ export class AppComponent {
   //     return promise
 
   //   }
+
+    
 
 }

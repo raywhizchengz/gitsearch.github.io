@@ -1,28 +1,38 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {FormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { NgProgressModule } from '@ngx-progressbar/core';
+import { RouterModule, Routes } from '@angular/router'
+import { NgProgressHttpModule } from '@ngx-progressbar/http';
+import { UserService } from './user-http/user.service';
+import { ReposService } from './repos-http/repos.service';
 
-import { AppRoutingModule } from './app-routing.module';
+import { RoutingModule} from './routing/routing.module'
 import { AppComponent } from './app.component';
-import { GoalComponent } from './goal/goal.component';
-import { GoalDetailsComponent } from './goal-details/goal-details.component';
-import { StrikethroughDirective } from './strikethrough.directive';
-import { GoalFormComponent } from './goal-form/goal-form.component';
+import { DisplayComponent } from './display/display.component';
+import { RepositoryComponent } from './repository/repository.component';
+import { DateCountPipe } from './date-count.pipe';
+import { HighlightDirective } from './highlight.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    GoalComponent,
-    GoalDetailsComponent,
-    StrikethroughDirective,
-    GoalFormComponent
+    DisplayComponent,
+    RepositoryComponent,
+    DateCountPipe,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    RoutingModule,
+    HttpClientModule,
+    NgProgressModule,
+    NgProgressHttpModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [UserService, ReposService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
