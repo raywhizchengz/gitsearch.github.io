@@ -7,7 +7,7 @@ import { DisplayComponent } from './display/display.component'
 })
 export class HighlightDirective {
 
-  // @Input() user: User;
+  @Input() user: User;
 
   constructor(private elem: ElementRef) {
     this.elem.nativeElement.style.backgroundColor = '#17a2b8';
