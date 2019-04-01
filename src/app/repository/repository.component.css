@@ -32,6 +32,10 @@ h3{
     padding: 1.5%;
 }
 
+.item{
+    margin-bottom: 5%;
+}
+
 @media only screen and (min-width: 812px) {
     .row{
         display: flex;
