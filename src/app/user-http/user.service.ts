@@ -9,15 +9,11 @@ import { User } from '../user-class/user';
 export class UserService {
 
   user: User;
-  userName="";
+  userName: string;
 
   constructor(private http:HttpClient){
     this.user = new User("","","","","","","", "", new Date());
   }
-
-  updateUser(userName: string){
-      this.userName = userName; 
-    }
   
 
     userRequest(){
@@ -33,7 +29,7 @@ export class UserService {
         html_url: any;
       }
       let promise = new Promise((resolve,reject)=>{
-        this.http.get<ApiResponse>(environment.apiUrl + this.userName + "?access_tpken=" + environment.access_token).toPromise().then(response=>{
+        this.http.get<ApiResponse>(environment.apiUrl + this.userName + "?access_token=" + environment.access_token).toPromise().then(response=>{
 
           this.user.avatar = response.avatar_url
           this.user.username = response.login
@@ -50,13 +46,14 @@ export class UserService {
       },
       error=>{
 
-          this.user.avatar = ""
+          this.user.avatar = "https://avatars1.githubusercontent.com/u/47349274?v=4"
           this.user.username = "fuaad001"
           this.user.name = "Hussein Fuaad"
-          this.user.bio = "Coding is mbaemby!"
+          this.user.bio = "Full-Stack Developer \r\nAndroid Developer\r\nCertified Chef\r\nRelationship Officer"
           this.user.repositories = 22
           this.user.followers = 2
           this.user.following = 0
+          this.user.link = "https://github.com/fuaad001"
 
         reject(error);
 
@@ -68,6 +65,9 @@ export class UserService {
 
     }
 
+    userLookup(userName: string){
+      this.userName = userName;
+    }
     
 
 }

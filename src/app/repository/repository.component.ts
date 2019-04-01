@@ -3,22 +3,24 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { Repository } from '../repository-class/repository';
 import { Repos } from '../repos'
+import { ReposService } from '../repos-http/repos.service';
+import { ForksPipe } from '../forks.pipe'
 
 @Component({
   selector: 'app-repository',
   templateUrl: './repository.component.html',
+  providers: [ReposService],
   styleUrls: ['./repository.component.css']
 })
 export class RepositoryComponent implements OnInit {
 
   repo: Repository;
-  userName = "";
-  repoName = "";
+  userName: string;
+  repoName: string;
   repos: Repos;
 
-  constructor(private http:HttpClient){
+  constructor(private http:HttpClient, private repoRequestService: ReposService){
     this.repo = new Repository("","","","","");
-    this.repos = new Repos([])
   }
   
     repoRequest(){
@@ -62,26 +64,32 @@ export class RepositoryComponent implements OnInit {
 
     }
 
-    getRepoData(){
-
-
-      let promise =new Promise((resolve,reject)=>{
-          this.http.get( 'https://api.github.com/users/' + this.userName +'/repos?access_token=' + environment.access_token).toPromise().then(response=>{
-   
-              this.repos.reposArray=response;
-   
-              resolve()
-          },
-          error=>{
-                  this.repos.reposArray=[];
-   
-                  reject(error)
-              }
-          )
-      })
-   
-      return promise
+    repoLookup(){
+      this.repoRequestService.repoLookup(this.userName);
+      this.repoRequestService.getRepoData();
+      this.repos = this.repoRequestService.repos;
     }
+
+    // getRepoData(){
+
+
+    //   let promise =new Promise((resolve,reject)=>{
+    //       this.http.get( 'https://api.github.com/users/' + this.userName +'/repos?access_token=' + environment.access_token).toPromise().then(response=>{
+   
+    //           this.repos.reposArray=response;
+   
+    //           resolve()
+    //       },
+    //       error=>{
+    //               this.repos.reposArray=[];
+   
+    //               reject(error)
+    //           }
+    //       )
+    //   })
+   
+    //   return promise
+    // }
 
   ngOnInit() {
   }

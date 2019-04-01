@@ -14,6 +14,7 @@ import { DisplayComponent } from './display/display.component';
 import { RepositoryComponent } from './repository/repository.component';
 import { DateCountPipe } from './date-count.pipe';
 import { HighlightDirective } from './highlight.directive';
+import { ForksPipe } from './forks.pipe';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { HighlightDirective } from './highlight.directive';
     DisplayComponent,
     RepositoryComponent,
     DateCountPipe,
-    HighlightDirective
+    HighlightDirective,
+    ForksPipe
   ],
   imports: [
     BrowserModule,
