@@ -41,10 +41,10 @@ Angular CLI
 ## Support and contact details
 
 * Contact me using:
-* Telephone: +(254) 751-579-367
-* Email: husseinfuaad@hotmail.com
+* Telephone: +(254) 700-775-732
+* Email: raychengole97@gmail.com
 
 ### License and Copyright details
 
 * The MIT License (MIT)
-* Copyright (c) 2019**Hussein Fuaad Mahmoud**
+* Copyright (c) 2019 Ray Chengole
